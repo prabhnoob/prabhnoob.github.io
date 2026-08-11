@@ -54,19 +54,19 @@ function ProjectArtwork({ project, hero = false }: { project: Project; hero?: bo
         </div>
       )}
 
-      {project.art === "planner" && (
-        <div className="planner-art">
-          <div className="planner-sidebar">
-            <small>DEGREE MAP</small>
-            <b>Economics</b>
+      {project.art === "buddy" && (
+        <div className="buddy-art">
+          <div className="buddy-filters">
+            <small>MATCH BY COURSE</small>
+            <b>SENG 310</b>
             <span /><span /><span />
           </div>
-          <div className="planner-board">
-            <div className="planner-term"><small>FALL</small><span>ECON 103</span><span>MATH 100</span></div>
-            <div className="planner-term"><small>SPRING</small><span>ECON 104</span><span>STAT 252</span></div>
-            <div className="planner-term planner-term--future"><small>NEXT</small><span>ECON 313</span><span>ECON 345</span></div>
+          <div className="buddy-board">
+            <div className="buddy-profile"><small>92% MATCH</small><span>PS</span><b>Afternoons</b></div>
+            <div className="buddy-profile"><small>86% MATCH</small><span>AK</span><b>Library</b></div>
+            <div className="buddy-profile buddy-profile--muted"><small>78% MATCH</small><span>JM</span><b>Online</b></div>
           </div>
-          <div className="planner-readout"><small>PLAN STATUS</small><b>Prerequisites clear</b></div>
+          <div className="buddy-readout"><small>STUDY MATCHES</small><b>3 compatible peers</b></div>
         </div>
       )}
 

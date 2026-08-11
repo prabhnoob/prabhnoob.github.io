@@ -842,7 +842,7 @@ button {
 }
 
 .clinic-art,
-.planner-art {
+.buddy-art {
   position: absolute;
   inset: 0;
 }
@@ -934,7 +934,7 @@ button {
 }
 
 .clinic-panel small,
-.planner-readout small,
+.buddy-readout small,
 .world-label small,
 .map-readout small {
   color: var(--project-accent);
@@ -944,7 +944,7 @@ button {
 }
 
 .clinic-panel b,
-.planner-readout b,
+.buddy-readout b,
 .world-label b {
   margin-top: 0.2rem;
   color: #fff;
@@ -968,11 +968,11 @@ button {
 .clinic-panel i:nth-of-type(2) { opacity: 0.75; }
 .clinic-panel i:nth-of-type(3) { opacity: 0.5; }
 
-.project-art--planner {
+.project-art--buddy {
   background: radial-gradient(circle at 25% 78%, rgba(166, 255, 120, 0.17), transparent 34%), linear-gradient(145deg, #151f28, #091014 75%);
 }
 
-.planner-sidebar {
+.buddy-filters {
   position: absolute;
   inset: 18% auto 10% 6%;
   width: 24%;
@@ -985,29 +985,29 @@ button {
   gap: 0.38rem;
 }
 
-.planner-sidebar small {
+.buddy-filters small {
   color: var(--project-accent);
   font-family: ui-monospace, "Cascadia Code", monospace;
   font-size: 0.36rem;
   letter-spacing: 0.1em;
 }
 
-.planner-sidebar b {
+.buddy-filters b {
   margin-bottom: 0.18rem;
   color: #fff;
   font-size: 0.66rem;
 }
 
-.planner-sidebar span {
+.buddy-filters span {
   height: 0.28rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
 }
 
-.planner-sidebar span:nth-of-type(2) { width: 72%; }
-.planner-sidebar span:nth-of-type(3) { width: 86%; }
+.buddy-filters span:nth-of-type(2) { width: 72%; }
+.buddy-filters span:nth-of-type(3) { width: 86%; }
 
-.planner-board {
+.buddy-board {
   position: absolute;
   inset: 18% 6% 25% 34%;
   display: grid;
@@ -1015,7 +1015,7 @@ button {
   gap: 0.38rem;
 }
 
-.planner-term {
+.buddy-profile {
   display: grid;
   align-content: start;
   gap: 0.4rem;
@@ -1024,14 +1024,19 @@ button {
   background: rgba(255, 255, 255, 0.035);
 }
 
-.planner-term small {
+.buddy-profile small {
   color: rgba(255, 255, 255, 0.45);
   font-family: ui-monospace, "Cascadia Code", monospace;
   font-size: 0.34rem;
   letter-spacing: 0.1em;
 }
 
-.planner-term span {
+.buddy-profile span {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
   padding: 0.38rem 0.3rem;
   border: 1px solid rgba(166, 255, 120, 0.18);
   border-radius: 0.28rem;
@@ -1041,16 +1046,22 @@ button {
   text-align: center;
 }
 
-.planner-term--future {
+.buddy-profile b {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.36rem;
+  text-align: center;
+}
+
+.buddy-profile--muted {
   border-top-color: rgba(255, 255, 255, 0.2);
 }
 
-.planner-term--future span {
+.buddy-profile--muted span {
   border-color: rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
 }
 
-.planner-readout {
+.buddy-readout {
   position: absolute;
   right: 6%;
   bottom: 8%;
@@ -1058,7 +1069,7 @@ button {
   text-align: right;
 }
 
-.planner-readout b {
+.buddy-readout b {
   font-size: clamp(0.78rem, 1.45vw, 1.15rem);
 }
 

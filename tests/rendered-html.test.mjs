@@ -106,12 +106,13 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
     "UVcraft",
     "Pacman Tester",
     "AwareTrail",
-    "UVic Course Planner",
+    "Study Buddy Finder",
     "Patient Data Management",
     "CSC 360 Simple Shell",
   ]) {
     assert.match(text, new RegExp(projectTitle, "i"));
   }
+  assert.doesNotMatch(text, /UVic Course Planner|Degree planning/i);
   assert.doesNotMatch(text, /Stock Evolver|SmartLift|Wildfire Tracker/i);
   assert.match(text, /Software Testing/i);
   assert.match(text, /Human-Computer Interaction/i);

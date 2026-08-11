@@ -1,4 +1,4 @@
-export type ProjectArt = "clinic" | "planner" | "map" | "world" | "testing" | "terminal";
+export type ProjectArt = "clinic" | "buddy" | "map" | "world" | "testing" | "terminal";
 
 export interface Project {
   id: string;
@@ -139,30 +139,30 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "uvic-course-planner",
-    title: "UVic Course Planner",
+    id: "study-buddy-finder",
+    title: "Study Buddy Finder",
     category: "Human-Computer Interaction",
-    eyebrow: "SENG 310 · Degree planning",
+    eyebrow: "SENG 310 · Student matching",
     summary:
-      "An interactive degree-planning prototype that turns prerequisites, course status, and multi-term scheduling into a visual map.",
+      "A human-centred web prototype that helps UVic students find compatible study partners by course, availability, location, and study preferences.",
     problem:
-      "Students must coordinate prerequisites, availability, program requirements, and several possible schedules across information that is difficult to compare at a glance.",
+      "Students often want peer support but have no simple way to discover classmates whose courses, schedules, locations, and study habits align.",
     contribution:
-      "Translated HCI coursework into an end-to-end browser prototype, using iterative ideation and usability heuristics to make planning feedback visible and actions reversible.",
+      "Applied HCI methods to shape the matching flow, organize student profile information, and make compatibility cues easy to scan without overwhelming the user.",
     implementation:
-      "A responsive HTML, CSS, and JavaScript prototype models course states, drag-and-drop planning, prerequisite checks, term progression, saved plans, and program-switch impact.",
+      "A responsive HTML, CSS, and JavaScript prototype supports profile setup, course-based discovery, compatibility filters, match review, and connection requests.",
     features: [
-      "Drag-and-drop multi-term course map",
-      "Prerequisite and availability feedback",
-      "Plan comparison and program switching",
-      "Search, filters, progress, and export tools",
+      "Course and subject matching",
+      "Availability and preferred-location filters",
+      "Study-style compatibility profiles",
+      "Match review and connection requests",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "HCI", "Heuristic evaluation"],
+    technologies: ["HTML", "CSS", "JavaScript", "HCI", "UX prototyping"],
     challenge:
-      "Showing a dense dependency graph without forcing students to remember course rules or lose track of why a plan needs attention.",
+      "Presenting enough information for a useful match while keeping the experience approachable and respectful of student privacy.",
     outcome:
-      "A working high-fidelity prototype that applies visibility, recognition, consistency, user control, and error-prevention principles to a real student workflow.",
-    art: "planner",
+      "A high-fidelity prototype that applies visibility, recognition, consistency, user control, and clear feedback to the study-partner discovery journey.",
+    art: "buddy",
     accent: "#a6ff78",
     featured: false,
   },
@@ -236,7 +236,7 @@ export const projectRails = [
     eyebrow: "From coursework to craft",
     title: "Interaction, requirements & systems",
     description: "Human-centred design, traceable requirements, and lower-level systems work.",
-    projectIds: ["uvic-course-planner", "awaretrail", "simple-shell"],
+    projectIds: ["study-buddy-finder", "awaretrail", "simple-shell"],
   },
 ] as const;
 
