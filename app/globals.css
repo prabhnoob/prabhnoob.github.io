@@ -837,199 +837,104 @@ button {
   background: rgba(255, 255, 255, 0.35);
 }
 
-.project-art--markets {
-  background: radial-gradient(circle at 76% 24%, rgba(57, 245, 199, 0.22), transparent 34%), linear-gradient(145deg, #0b2023, #071013 70%);
+.project-art--clinic {
+  background: radial-gradient(circle at 78% 20%, rgba(98, 231, 208, 0.2), transparent 34%), linear-gradient(145deg, #0a2628, #071114 72%);
 }
 
-.market-art {
-  position: absolute;
-  inset: 2.4rem 1.2rem 1.15rem;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
-.market-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  color: rgba(255, 255, 255, 0.75);
-  font-family: ui-monospace, "Cascadia Code", monospace;
-  font-size: 0.42rem;
-  letter-spacing: 0.1em;
-}
-
-.market-heading b {
-  font-size: 0.68rem;
-  letter-spacing: 0;
-}
-
-.market-chart {
-  position: relative;
-  margin: 0.75rem 0 0.55rem;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: repeating-linear-gradient(90deg, transparent 0 14.1%, rgba(255, 255, 255, 0.05) 14.3%), repeating-linear-gradient(0deg, transparent 0 32%, rgba(255, 255, 255, 0.05) 33%);
-}
-
-.chart-bars {
-  position: absolute;
-  inset: 22% 2% 0;
-  display: flex;
-  align-items: end;
-  justify-content: space-around;
-  gap: 5%;
-}
-
-.chart-bars span {
-  width: 5%;
-  background: linear-gradient(180deg, var(--project-accent), rgba(57, 245, 199, 0.05));
-  opacity: 0.35;
-}
-
-.chart-line {
-  position: absolute;
-  z-index: 2;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--project-accent);
-  transform-origin: left center;
-  box-shadow: 0 0 8px var(--project-accent);
-}
-
-.chart-line--one {
-  width: 50%;
-  left: 5%;
-  top: 65%;
-  transform: rotate(-11deg);
-}
-
-.chart-line--two {
-  width: 45%;
-  left: 52%;
-  top: 48%;
-  transform: rotate(-24deg);
-}
-
-.chart-dot {
-  position: absolute;
-  z-index: 3;
-  top: 25%;
-  right: 3%;
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 2px solid var(--project-accent);
-  border-radius: 50%;
-  background: #0c1c1f;
-  box-shadow: 0 0 0 5px rgba(57, 245, 199, 0.12);
-}
-
-.market-stats {
-  display: flex;
-  justify-content: space-between;
-}
-
-.market-stats span {
-  display: grid;
-  gap: 0.05rem;
-}
-
-.market-stats b {
-  color: var(--project-accent);
-  font-size: 0.68rem;
-}
-
-.market-stats small {
-  color: rgba(255, 255, 255, 0.44);
-  font-size: 0.4rem;
-  text-transform: uppercase;
-}
-
-.project-art--mobile {
-  background: radial-gradient(circle at 33% 75%, rgba(255, 184, 92, 0.28), transparent 32%), linear-gradient(135deg, #2b1b16, #0e1518 68%);
-}
-
-.mobile-art {
+.clinic-art,
+.planner-art {
   position: absolute;
   inset: 0;
 }
 
-.phone-shell {
+.clinic-shell {
   position: absolute;
-  width: 32%;
-  height: 82%;
-  bottom: -8%;
-  left: 13%;
-  padding: 0.85rem 0.55rem;
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  border-radius: 1.15rem;
-  background: linear-gradient(170deg, #151f23, #0b1012);
-  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.35);
-  transform: rotate(-5deg);
+  inset: 18% 34% 10% 7%;
+  padding: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.55rem;
+  background: rgba(6, 18, 21, 0.78);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
 }
 
-.phone-speaker {
-  position: absolute;
-  top: 0.36rem;
-  left: 39%;
-  width: 22%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.phone-status {
+.clinic-heading {
   display: flex;
+  align-items: end;
   justify-content: space-between;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.38rem;
+  letter-spacing: 0.1em;
+}
+
+.clinic-heading b {
   color: #fff;
+  font-size: 0.64rem;
+  letter-spacing: -0.02em;
+}
+
+.clinic-search {
+  margin: 0.5rem 0;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 0.28rem;
+  color: rgba(255, 255, 255, 0.35);
   font-size: 0.38rem;
 }
 
-.phone-status span {
-  color: var(--project-accent);
+.clinic-patients {
+  display: grid;
+  gap: 0.28rem;
 }
 
-.workout-ring {
-  width: 3.1rem;
-  height: 3.1rem;
-  margin: 0.8rem auto 0.65rem;
-  border: 0.32rem solid rgba(255, 184, 92, 0.14);
-  border-top-color: var(--project-accent);
-  border-right-color: var(--project-accent);
+.clinic-patients > span {
+  display: grid;
+  grid-template-columns: 1.2rem 1fr auto;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem;
+  border-radius: 0.28rem;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.clinic-patients i {
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: #fff;
-  font-size: 0.56rem;
-  transform: rotate(25deg);
+  background: rgba(98, 231, 208, 0.16);
+  color: var(--project-accent);
+  font-size: 0.34rem;
+  font-style: normal;
 }
 
-.workout-ring span {
-  transform: rotate(-25deg);
+.clinic-patients b {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.42rem;
 }
 
-.workout-lines {
-  display: grid;
-  gap: 0.3rem;
+.clinic-patients small {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.32rem;
 }
 
-.workout-lines i {
-  height: 0.24rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.workout-lines i:nth-child(1) { width: 88%; }
-.workout-lines i:nth-child(2) { width: 70%; }
-.workout-lines i:nth-child(3) { width: 78%; }
-
-.mobile-copy {
+.clinic-panel {
   position: absolute;
-  top: 35%;
-  right: 10%;
+  z-index: 3;
+  top: 30%;
+  right: 6%;
+  width: 31%;
+  padding: 0.72rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.48rem;
+  background: rgba(5, 15, 18, 0.86);
   display: grid;
+  gap: 0.18rem;
 }
 
-.mobile-copy small,
+.clinic-panel small,
+.planner-readout small,
 .world-label small,
 .map-readout small {
   color: var(--project-accent);
@@ -1038,13 +943,123 @@ button {
   letter-spacing: 0.12em;
 }
 
-.mobile-copy b,
+.clinic-panel b,
+.planner-readout b,
 .world-label b {
   margin-top: 0.2rem;
   color: #fff;
   font-size: clamp(0.95rem, 1.8vw, 1.5rem);
   letter-spacing: -0.04em;
   line-height: 0.95;
+}
+
+.clinic-panel span {
+  margin-bottom: 0.35rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.4rem;
+}
+
+.clinic-panel i {
+  height: 0.2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--project-accent) 0 90%, rgba(255, 255, 255, 0.08) 90%);
+}
+
+.clinic-panel i:nth-of-type(2) { opacity: 0.75; }
+.clinic-panel i:nth-of-type(3) { opacity: 0.5; }
+
+.project-art--planner {
+  background: radial-gradient(circle at 25% 78%, rgba(166, 255, 120, 0.17), transparent 34%), linear-gradient(145deg, #151f28, #091014 75%);
+}
+
+.planner-sidebar {
+  position: absolute;
+  inset: 18% auto 10% 6%;
+  width: 24%;
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  align-content: start;
+  gap: 0.38rem;
+}
+
+.planner-sidebar small {
+  color: var(--project-accent);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.36rem;
+  letter-spacing: 0.1em;
+}
+
+.planner-sidebar b {
+  margin-bottom: 0.18rem;
+  color: #fff;
+  font-size: 0.66rem;
+}
+
+.planner-sidebar span {
+  height: 0.28rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.planner-sidebar span:nth-of-type(2) { width: 72%; }
+.planner-sidebar span:nth-of-type(3) { width: 86%; }
+
+.planner-board {
+  position: absolute;
+  inset: 18% 6% 25% 34%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.38rem;
+}
+
+.planner-term {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  padding: 0.48rem;
+  border-top: 2px solid var(--project-accent);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.planner-term small {
+  color: rgba(255, 255, 255, 0.45);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.34rem;
+  letter-spacing: 0.1em;
+}
+
+.planner-term span {
+  padding: 0.38rem 0.3rem;
+  border: 1px solid rgba(166, 255, 120, 0.18);
+  border-radius: 0.28rem;
+  background: rgba(166, 255, 120, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.37rem;
+  text-align: center;
+}
+
+.planner-term--future {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.planner-term--future span {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.planner-readout {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  display: grid;
+  text-align: right;
+}
+
+.planner-readout b {
+  font-size: clamp(0.78rem, 1.45vw, 1.15rem);
 }
 
 .project-art--map {

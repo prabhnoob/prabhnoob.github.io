@@ -34,39 +34,39 @@ function ProjectArtwork({ project, hero = false }: { project: Project; hero?: bo
         <span />
       </div>
 
-      {project.art === "markets" && (
-        <div className="market-art">
-          <div className="market-heading">
-            <span>PORTFOLIO / 01</span>
-            <b>Signal view</b>
-          </div>
-          <div className="market-chart">
-            <span className="chart-line chart-line--one" />
-            <span className="chart-line chart-line--two" />
-            <i className="chart-dot" />
-            <div className="chart-bars">
-              {[38, 57, 44, 72, 61, 88, 76, 94].map((height) => (
-                <span key={height} style={{ height: `${height}%` }} />
-              ))}
+      {project.art === "clinic" && (
+        <div className="clinic-art">
+          <div className="clinic-shell">
+            <div className="clinic-heading"><span>PATIENTS</span><b>Clinic records</b></div>
+            <div className="clinic-search">Search by name or PHN</div>
+            <div className="clinic-patients">
+              <span><i>AS</i><b>Active record</b><small>PHN 045-265</small></span>
+              <span><i>MK</i><b>Patient profile</b><small>3 notes</small></span>
+              <span><i>JD</i><b>Patient profile</b><small>Updated</small></span>
             </div>
           </div>
-          <div className="market-stats">
-            <span><b>+18.4%</b><small>change</small></span>
-            <span><b>05</b><small>signals</small></span>
-            <span><b>LIVE</b><small>view</small></span>
+          <div className="clinic-panel">
+            <small>TESTED WORKFLOWS</small>
+            <b>23 scenarios</b>
+            <span>auth · records · notes</span>
+            <i /><i /><i />
           </div>
         </div>
       )}
 
-      {project.art === "mobile" && (
-        <div className="mobile-art">
-          <div className="phone-shell">
-            <span className="phone-speaker" />
-            <div className="phone-status"><b>Today</b><span>03 / 05</span></div>
-            <div className="workout-ring"><span>72%</span></div>
-            <div className="workout-lines"><i /><i /><i /></div>
+      {project.art === "planner" && (
+        <div className="planner-art">
+          <div className="planner-sidebar">
+            <small>DEGREE MAP</small>
+            <b>Economics</b>
+            <span /><span /><span />
           </div>
-          <div className="mobile-copy"><small>ROUTINE 03</small><b>Strength,<br />tracked.</b></div>
+          <div className="planner-board">
+            <div className="planner-term"><small>FALL</small><span>ECON 103</span><span>MATH 100</span></div>
+            <div className="planner-term"><small>SPRING</small><span>ECON 104</span><span>STAT 252</span></div>
+            <div className="planner-term planner-term--future"><small>NEXT</small><span>ECON 313</span><span>ECON 345</span></div>
+          </div>
+          <div className="planner-readout"><small>PLAN STATUS</small><b>Prerequisites clear</b></div>
         </div>
       )}
 
@@ -468,7 +468,7 @@ function About() {
           <p className="section-eyebrow">About / Prabhnoor Singh</p>
           <h2 id="about-title">I like the moment when a difficult system starts to feel simple.</h2>
           <div className="about-text">
-            <p>I’m a Computer Science student and software developer in Victoria, BC, interested in the space where strong engineering meets thoughtful interaction design. My projects move between data-heavy web products, mobile workflows, systems programming, and browser-based 3D—different surfaces connected by the same goal: make the underlying complexity easier to understand and use.</p>
+            <p>I’m a Computer Science student and software developer in Victoria, BC, interested in the space where strong engineering meets thoughtful interaction design. My projects move between tested software, patient-data tools, human-centred prototypes, requirements work, systems programming, and browser-based 3D—different surfaces connected by the same goal: make the underlying complexity easier to understand and use.</p>
             <p>I care about maintainable components, responsive behaviour, accessibility, and the final layer of polish that makes software feel considered. Outside the code, customer-facing work has strengthened how I communicate, prioritize, and stay useful when the pace picks up. I’m currently looking for opportunities to contribute, learn quickly, and ship with a collaborative team.</p>
           </div>
           <div className="about-signals"><span>Based in {profile.location}</span><span>Open to software opportunities</span></div>

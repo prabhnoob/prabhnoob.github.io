@@ -1,4 +1,4 @@
-export type ProjectArt = "markets" | "mobile" | "map" | "world" | "testing" | "terminal";
+export type ProjectArt = "clinic" | "planner" | "map" | "world" | "testing" | "terminal";
 
 export interface Project {
   id: string;
@@ -45,7 +45,7 @@ export const profile = {
   role: "Computer Science Student · Software Developer",
   headline: "I build clear interfaces for complex systems.",
   positioning:
-    "From data-rich dashboards to mobile workflows and interactive 3D worlds, I turn technical ideas into responsive, useful experiences.",
+    "From tested software and patient-data tools to human-centred prototypes and interactive 3D worlds, I turn technical ideas into responsive, useful experiences.",
   location: "Victoria, BC",
   availability: "Open to co-op, internship, and software collaboration opportunities.",
   email: "prabhnoorarcher@gmail.com",
@@ -86,8 +86,8 @@ export const projects: Project[] = [
   {
     id: "pacman-tester",
     title: "Pacman Tester",
-    category: "Software quality",
-    eyebrow: "JPacman test suite",
+    category: "Software Testing",
+    eyebrow: "SENG 275 · JPacman QA",
     summary:
       "A layered testing project for JPacman covering game rules, collisions, parsing, scoring, and player state.",
     problem:
@@ -113,8 +113,8 @@ export const projects: Project[] = [
   {
     id: "awaretrail",
     title: "AwareTrail",
-    category: "Product design",
-    eyebrow: "Trail running coach",
+    category: "Requirements Engineering",
+    eyebrow: "SENG 321 · Trail running coach",
     summary:
       "A requirements-led mobile coaching concept that recommends safer, goal-matched trail routes and full-body training plans.",
     problem:
@@ -139,58 +139,60 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "stock-evolver",
-    title: "Stock Evolver",
-    category: "Data product",
-    eyebrow: "Investment analysis",
+    id: "uvic-course-planner",
+    title: "UVic Course Planner",
+    category: "Human-Computer Interaction",
+    eyebrow: "SENG 310 · Degree planning",
     summary:
-      "An interactive dashboard that makes market movement easier to explore through focused data views.",
+      "An interactive degree-planning prototype that turns prerequisites, course status, and multi-term scheduling into a visual map.",
     problem:
-      "Investment data is often dense and fragmented, making it difficult to compare movement and find a useful signal quickly.",
+      "Students must coordinate prerequisites, availability, program requirements, and several possible schedules across information that is difficult to compare at a glance.",
     contribution:
-      "Designed the product structure and built the interface as a set of reusable, responsive components for fast scanning and deeper exploration.",
+      "Translated HCI coursework into an end-to-end browser prototype, using iterative ideation and usability heuristics to make planning feedback visible and actions reversible.",
     implementation:
-      "Typed React components organize controls, market context, and visualisation states while keeping the experience legible across screen sizes.",
+      "A responsive HTML, CSS, and JavaScript prototype models course states, drag-and-drop planning, prerequisite checks, term progression, saved plans, and program-switch impact.",
     features: [
-      "Interactive market visualisations",
-      "Reusable dashboard components",
-      "Responsive comparison views",
+      "Drag-and-drop multi-term course map",
+      "Prerequisite and availability feedback",
+      "Plan comparison and program switching",
+      "Search, filters, progress, and export tools",
     ],
-    technologies: ["React", "TypeScript", "Data visualisation"],
+    technologies: ["HTML", "CSS", "JavaScript", "HCI", "Heuristic evaluation"],
     challenge:
-      "Balancing information density with a hierarchy that still feels approachable to a first-time visitor.",
+      "Showing a dense dependency graph without forcing students to remember course rules or lose track of why a plan needs attention.",
     outcome:
-      "A portfolio-ready analysis surface that demonstrates component architecture and information design without hiding the underlying data story.",
-    art: "markets",
-    accent: "#39f5c7",
+      "A working high-fidelity prototype that applies visibility, recognition, consistency, user control, and error-prevention principles to a real student workflow.",
+    art: "planner",
+    accent: "#a6ff78",
     featured: false,
   },
   {
-    id: "smartlift",
-    title: "SmartLift",
-    category: "Mobile product",
-    eyebrow: "Workout tracking",
+    id: "patient-data-management",
+    title: "Patient Data Management",
+    category: "Data & Applications",
+    eyebrow: "SENG 265 · Clinic system",
     summary:
-      "A mobile workout experience that combines authenticated access with persistent routine tracking.",
+      "A clinic application for securely managing patient profiles, selecting active records, and maintaining searchable clinical notes.",
     problem:
-      "Workout progress becomes harder to sustain when plans, completed sets, and account history live in disconnected places.",
+      "Clinical staff need a consistent way to find and update patient information while preventing unauthenticated access and invalid record operations.",
     contribution:
-      "Shaped the mobile interaction flow and connected authenticated user sessions to durable workout data.",
+      "Built the patient and note workflows, connected the domain model to persistence, and exercised the system through unit and integration tests.",
     implementation:
-      "Expo-based screens and Firebase services support account access, structured routines, and continuity between sessions.",
+      "Python powers the controller, data-access, CLI, and PyQt6 GUI layers; C and pandas support structured data processing, with JSON and pickle persistence for patient and note records.",
     features: [
-      "Authenticated user flows",
-      "Persistent workout tracking",
-      "Mobile-first interaction patterns",
+      "Authenticated patient CRUD workflows",
+      "Searchable, timestamped clinical notes",
+      "Command-line and PyQt6 interfaces",
+      "23 unit and integration test scenarios",
     ],
-    technologies: ["Expo", "Firebase", "React Native"],
+    technologies: ["Python", "C", "pandas", "PyQt6", "JSON"],
     challenge:
-      "Keeping workout state understandable and consistent as users move between sessions and devices.",
+      "Keeping authentication, current-patient state, persistence, and failure rules consistent across both command-line and graphical interfaces.",
     outcome:
-      "A cohesive mobile foundation for planning, recording, and revisiting training activity.",
-    art: "mobile",
-    accent: "#ffb85c",
-    featured: false,
+      "A layered patient-record system with clear separation between controllers, domain objects, data-access components, interfaces, and automated verification.",
+    art: "clinic",
+    accent: "#62e7d0",
+    featured: true,
   },
   {
     id: "simple-shell",
@@ -227,14 +229,14 @@ export const projectRails = [
     eyebrow: "Start here",
     title: "Featured projects",
     description: "The strongest product stories, selected for a quick recruiter scan.",
-    projectIds: ["uvcraft", "pacman-tester", "awaretrail"],
+    projectIds: ["uvcraft", "pacman-tester", "patient-data-management"],
   },
   {
-    id: "systems-interactive",
-    eyebrow: "Under the surface",
-    title: "Products & systems",
-    description: "Data products, mobile workflows, and systems work with a little more depth.",
-    projectIds: ["stock-evolver", "smartlift", "simple-shell"],
+    id: "coursework-systems",
+    eyebrow: "From coursework to craft",
+    title: "Interaction, requirements & systems",
+    description: "Human-centred design, traceable requirements, and lower-level systems work.",
+    projectIds: ["uvic-course-planner", "awaretrail", "simple-shell"],
   },
 ] as const;
 
@@ -266,9 +268,10 @@ export const experiences: ExperienceItem[] = [
     role: "Computer Science · Project Work",
     dates: "In progress · Expected 2027",
     summary:
-      "Course and independent builds spanning data products, mobile development, systems programming, and interactive graphics.",
+      "Course and independent builds spanning software testing, HCI, requirements engineering, data applications, systems programming, and interactive graphics.",
     highlights: [
       "Translate technical concepts into maintainable, demonstrable software projects.",
+      "Apply usability evaluation, requirements modelling, and automated testing to real project work.",
       "Use Git and GitHub to iterate, review changes, and publish working experiences.",
     ],
   },
@@ -280,16 +283,16 @@ export const skillGroups: SkillGroup[] = [
     skills: ["TypeScript", "JavaScript", "Java", "C", "Python", "SQL"],
   },
   {
-    title: "Web & mobile",
-    skills: ["React", "Vite", "Expo", "HTML", "Modern CSS"],
+    title: "Web & interaction",
+    skills: ["React", "Vite", "HTML", "Modern CSS", "HCI", "Heuristic evaluation"],
   },
   {
-    title: "Data & platforms",
-    skills: ["Firebase", "REST APIs", "Health data", "Mapping", "Data visualisation"],
+    title: "Data & applications",
+    skills: ["pandas", "PyQt6", "JSON", "Firebase", "REST APIs", "Health data"],
   },
   {
-    title: "Systems, QA & graphics",
-    skills: ["Linux", "Git", "JUnit", "Mockito", "Gradle", "Three.js", "React Three Fiber"],
+    title: "Quality, systems & graphics",
+    skills: ["JUnit", "Mockito", "Gradle", "Requirements engineering", "UML", "Linux", "Git", "Three.js", "React Three Fiber"],
   },
 ];
 

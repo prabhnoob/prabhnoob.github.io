@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s · Prabhnoor Singh",
     },
     description:
-      "Software developer portfolio featuring interactive 3D work, software testing, product design, data-rich interfaces, and systems programming.",
+      "Software developer portfolio featuring interactive 3D work, software testing, patient-data applications, HCI, requirements engineering, and systems programming.",
     applicationName: "Prabhnoor Singh Portfolio",
     authors: [{ name: "Prabhnoor Singh", url: "https://github.com/prabhnoob" }],
     creator: "Prabhnoor Singh",
@@ -36,6 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
       "computer science",
       "React developer",
       "TypeScript developer",
+      "software testing",
+      "human-computer interaction",
+      "requirements engineering",
+      "Python developer",
       "portfolio",
     ],
     alternates: { canonical: "/" },
@@ -49,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "/",
       title: "Prabhnoor Singh — Software Developer",
       description:
-        "Clear interfaces for complex systems—from data products to interactive 3D worlds.",
+        "Clear interfaces for complex systems—from tested patient-data applications to interactive 3D worlds.",
       siteName: "Prabhnoor Singh Portfolio",
       locale: "en_CA",
       images: [
@@ -65,7 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Prabhnoor Singh — Software Developer",
       description:
-        "Clear interfaces for complex systems—from data products to interactive 3D worlds.",
+        "Clear interfaces for complex systems—from tested patient-data applications to interactive 3D worlds.",
       images: ["/og.png"],
     },
     robots: {

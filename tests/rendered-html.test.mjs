@@ -103,15 +103,21 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
     `expected at least six project-card dialog buttons, found ${projectButtons.length}`,
   );
   for (const projectTitle of [
-    "Stock Evolver",
-    "SmartLift",
     "UVcraft",
     "Pacman Tester",
     "AwareTrail",
+    "UVic Course Planner",
+    "Patient Data Management",
     "CSC 360 Simple Shell",
   ]) {
     assert.match(text, new RegExp(projectTitle, "i"));
   }
+  assert.doesNotMatch(text, /Stock Evolver|SmartLift|Wildfire Tracker/i);
+  assert.match(text, /Software Testing/i);
+  assert.match(text, /Human-Computer Interaction/i);
+  assert.match(text, /Requirements Engineering/i);
+  assert.match(text, /Python/i);
+  assert.match(text, /pandas/i);
   assert.match(html, /<noscript>/i);
   assert.match(text, /Project archive \/ no JavaScript/i);
   assert.match(text, /Case studies, kept readable\./i);
