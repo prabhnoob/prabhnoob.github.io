@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s · Prabhnoor Singh",
     },
     description:
-      "Software developer portfolio featuring data-rich interfaces, mobile workflows, systems programming, and interactive 3D work.",
+      "Software developer portfolio featuring interactive 3D work, software testing, product design, data-rich interfaces, and systems programming.",
     applicationName: "Prabhnoor Singh Portfolio",
     authors: [{ name: "Prabhnoor Singh", url: "https://github.com/prabhnoob" }],
     creator: "Prabhnoor Singh",

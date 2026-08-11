@@ -99,14 +99,15 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
       /<button\b(?=[^>]*\bclass=["'][^"']*\bproject-card__button\b[^"']*["'])(?=[^>]*\baria-haspopup=["']dialog["'])[^>]*>/gi,
     ) ?? [];
   assert.ok(
-    projectButtons.length >= 5,
-    `expected at least five project-card dialog buttons, found ${projectButtons.length}`,
+    projectButtons.length >= 6,
+    `expected at least six project-card dialog buttons, found ${projectButtons.length}`,
   );
   for (const projectTitle of [
     "Stock Evolver",
     "SmartLift",
-    "Wildfire Tracker",
     "UVcraft",
+    "Pacman Tester",
+    "AwareTrail",
     "CSC 360 Simple Shell",
   ]) {
     assert.match(text, new RegExp(projectTitle, "i"));
@@ -118,6 +119,8 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
   assert.match(html, /href=["']mailto:prabhnoorarcher@gmail\.com["']/i);
   assert.match(html, /href=["']https:\/\/github\.com\/prabhnoob\/?["']/i);
   assert.match(html, /href=["']\/resume\/prabhnoor-singh-resume\.pdf["']/i);
+  assert.match(text, /37 \/ 37/);
+  assert.match(text, /Project materials available on request\./i);
 
   const externalLinks = assertSecureBlankLinks(html, "rendered HTML");
   assert.ok(externalLinks.length >= 3, "expected GitHub and résumé links in the rendered page");

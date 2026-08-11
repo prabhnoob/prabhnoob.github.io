@@ -76,10 +76,12 @@ function ProjectArtwork({ project, hero = false }: { project: Project; hero?: bo
           <span className="map-orbit map-orbit--two" />
           <span className="map-land map-land--one" />
           <span className="map-land map-land--two" />
-          <span className="fire-point fire-point--one" />
-          <span className="fire-point fire-point--two" />
-          <span className="fire-point fire-point--three" />
-          <div className="map-readout"><small>EONET FEED</small><b>12 active events</b></div>
+          <span className="trail-path trail-path--one" />
+          <span className="trail-path trail-path--two" />
+          <span className="trail-point trail-point--one" />
+          <span className="trail-point trail-point--two" />
+          <span className="trail-point trail-point--three" />
+          <div className="map-readout"><small>ROUTE ENGINE</small><b>03 ranked routes</b></div>
         </div>
       )}
 
@@ -91,6 +93,22 @@ function ProjectArtwork({ project, hero = false }: { project: Project; hero?: bo
           </div>
           <div className="voxel-tower"><i /><i /><i /></div>
           <div className="world-label"><small>WORLD / UVIC</small><b>Walk the campus</b></div>
+        </div>
+      )}
+
+      {project.art === "testing" && (
+        <div className="testing-art">
+          <div className="testing-maze" aria-hidden="true">
+            <span className="testing-player" />
+            <span className="testing-ghost testing-ghost--one" />
+            <span className="testing-ghost testing-ghost--two" />
+          </div>
+          <div className="testing-panel">
+            <small>JUNIT / GRADLE</small>
+            <b>37 / 37</b>
+            <span>tests passing</span>
+            <i /><i /><i />
+          </div>
         </div>
       )}
 
@@ -207,7 +225,7 @@ function Hero({ onOpenProject }: { onOpenProject: (project: Project, trigger: HT
             </a>
           </div>
           <dl className="hero-facts" aria-label="Portfolio highlights">
-            <div><dt>05</dt><dd>selected builds</dd></div>
+            <div><dt>{String(projects.length).padStart(2, "0")}</dt><dd>selected builds</dd></div>
             <div><dt>03</dt><dd>product surfaces</dd></div>
             <div><dt>BC</dt><dd>{profile.location}</dd></div>
           </dl>
@@ -334,7 +352,7 @@ function ProjectDialog({
               <div className="dialog-links">
                 {project.demoUrl && <a className="button button--primary" href={project.demoUrl} target="_blank" rel="noopener noreferrer">Open live project <span aria-hidden="true">↗</span></a>}
                 {project.githubUrl && <a className="button button--secondary" href={project.githubUrl} target="_blank" rel="noopener noreferrer">View GitHub repository <span aria-hidden="true">↗</span></a>}
-                {!project.demoUrl && !project.githubUrl && <a className="button button--secondary" href={profile.github} target="_blank" rel="noopener noreferrer">Browse GitHub profile <span aria-hidden="true">↗</span></a>}
+                {!project.demoUrl && !project.githubUrl && <p className="dialog-availability">Project materials available on request.</p>}
               </div>
             </div>
 
@@ -387,6 +405,7 @@ function NoScriptProjectArchive() {
                 <p><b>Outcome:</b> {project.outcome}</p>
                 {project.demoUrl && <p><a href={project.demoUrl}>Open live project</a></p>}
                 {project.githubUrl && <p><a href={project.githubUrl}>View GitHub repository</a></p>}
+                {!project.demoUrl && !project.githubUrl && <p><b>Availability:</b> Project materials available on request.</p>}
               </div>
             </details>
           ))}
@@ -516,7 +535,7 @@ export function PortfolioExperience() {
         <Hero onOpenProject={openProject} />
         <section id="projects" className="projects-section" aria-labelledby="projects-title">
           <div className="projects-overview">
-            <div><p className="section-eyebrow">Selected work / 05 builds</p><h2 id="projects-title">A portfolio you can browse,<br />then dig into.</h2></div>
+            <div><p className="section-eyebrow">Selected work / {String(projects.length).padStart(2, "0")} builds</p><h2 id="projects-title">A portfolio you can browse,<br />then dig into.</h2></div>
             <p>Each card opens a focused case study with the problem, contribution, implementation, and outcome—no hover required.</p>
           </div>
           {projectRails.map((rail) => <ProjectRail key={rail.id} rail={rail} onOpen={openProject} />)}

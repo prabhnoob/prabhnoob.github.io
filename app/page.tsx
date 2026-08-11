@@ -5,7 +5,7 @@ import { profile, projects } from "./data/portfolio";
 export const metadata: Metadata = {
   title: { absolute: "Prabhnoor Singh — Software Developer" },
   description:
-    "Portfolio of Prabhnoor Singh, a Computer Science student and software developer building data products, mobile experiences, systems projects, and interactive 3D worlds.",
+    "Portfolio of Prabhnoor Singh, a Computer Science student and software developer building interactive 3D worlds, tested systems, product concepts, and data-rich interfaces.",
 };
 
 const structuredData = {

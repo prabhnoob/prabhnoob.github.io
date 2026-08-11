@@ -1,4 +1,4 @@
-export type ProjectArt = "markets" | "mobile" | "map" | "world" | "terminal";
+export type ProjectArt = "markets" | "mobile" | "map" | "world" | "testing" | "terminal";
 
 export interface Project {
   id: string;
@@ -55,87 +55,6 @@ export const profile = {
 
 export const projects: Project[] = [
   {
-    id: "stock-evolver",
-    title: "Stock Evolver",
-    category: "Data product",
-    eyebrow: "Investment analysis",
-    summary:
-      "An interactive dashboard that makes market movement easier to explore through focused data views.",
-    problem:
-      "Investment data is often dense and fragmented, making it difficult to compare movement and find a useful signal quickly.",
-    contribution:
-      "Designed the product structure and built the interface as a set of reusable, responsive components for fast scanning and deeper exploration.",
-    implementation:
-      "Typed React components organize controls, market context, and visualisation states while keeping the experience legible across screen sizes.",
-    features: [
-      "Interactive market visualisations",
-      "Reusable dashboard components",
-      "Responsive comparison views",
-    ],
-    technologies: ["React", "TypeScript", "Data visualisation"],
-    challenge:
-      "Balancing information density with a hierarchy that still feels approachable to a first-time visitor.",
-    outcome:
-      "A portfolio-ready analysis surface that demonstrates component architecture and information design without hiding the underlying data story.",
-    art: "markets",
-    accent: "#39f5c7",
-    featured: true,
-  },
-  {
-    id: "smartlift",
-    title: "SmartLift",
-    category: "Mobile product",
-    eyebrow: "Workout tracking",
-    summary:
-      "A mobile workout experience that combines authenticated access with persistent routine tracking.",
-    problem:
-      "Workout progress becomes harder to sustain when plans, completed sets, and account history live in disconnected places.",
-    contribution:
-      "Shaped the mobile interaction flow and connected authenticated user sessions to durable workout data.",
-    implementation:
-      "Expo-based screens and Firebase services support account access, structured routines, and continuity between sessions.",
-    features: [
-      "Authenticated user flows",
-      "Persistent workout tracking",
-      "Mobile-first interaction patterns",
-    ],
-    technologies: ["Expo", "Firebase", "React Native"],
-    challenge:
-      "Keeping workout state understandable and consistent as users move between sessions and devices.",
-    outcome:
-      "A cohesive mobile foundation for planning, recording, and revisiting training activity.",
-    art: "mobile",
-    accent: "#ffb85c",
-    featured: true,
-  },
-  {
-    id: "wildfire-tracker",
-    title: "Wildfire Tracker",
-    category: "Data & maps",
-    eyebrow: "Geographic intelligence",
-    summary:
-      "A map-led view of active wildfire events powered by NASA EONET geographic data.",
-    problem:
-      "Public event feeds are useful but difficult to interpret without geographic context and a clear way to inspect individual incidents.",
-    contribution:
-      "Connected the event feed to an interactive mapping experience and designed the information path from overview to incident detail.",
-    implementation:
-      "Imported and normalized EONET event data, plotted geographic positions, and exposed concise event context through responsive map controls.",
-    features: [
-      "NASA EONET data import",
-      "Geographic event visualisation",
-      "Focused incident details",
-    ],
-    technologies: ["React", "NASA EONET", "Mapping APIs"],
-    challenge:
-      "Transforming an external geographic feed into stable, readable markers and useful incident summaries.",
-    outcome:
-      "A fast visual overview that turns raw event data into a more navigable public-information experience.",
-    art: "map",
-    accent: "#ff725e",
-    featured: true,
-  },
-  {
     id: "uvcraft",
     title: "UVcraft",
     category: "Interactive 3D",
@@ -163,6 +82,115 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/prabhnoob/UVcraft",
     demoUrl: "https://prabhnoob.github.io/UVcraft/",
     featured: true,
+  },
+  {
+    id: "pacman-tester",
+    title: "Pacman Tester",
+    category: "Software quality",
+    eyebrow: "JPacman test suite",
+    summary:
+      "A layered testing project for JPacman covering game rules, collisions, parsing, scoring, and player state.",
+    problem:
+      "A real-time game can look correct while edge cases in collisions, lifecycle state, map parsing, or scoring remain unverified.",
+    contribution:
+      "Extended the JPacman test suite with unit and parameterized tests, then paired the automated checks with scripted and exploratory play sessions.",
+    implementation:
+      "JUnit 5, Mockito, AssertJ, and Gradle isolate collaborators and exercise both expected behavior and failure paths across seven focused suites.",
+    features: [
+      "37 passing automated tests",
+      "Collision and lifecycle coverage",
+      "Scripted and exploratory test report",
+    ],
+    technologies: ["Java", "JUnit 5", "Mockito", "Gradle", "JaCoCo"],
+    challenge:
+      "Testing stateful game behavior without coupling each assertion to rendering, timing, or unrelated collaborators.",
+    outcome:
+      "All 37 automated tests pass across seven suites, backed by manual scenarios for movement, pellets, ghosts, walls, and pause or resume behavior.",
+    art: "testing",
+    accent: "#ffe45c",
+    featured: true,
+  },
+  {
+    id: "awaretrail",
+    title: "AwareTrail",
+    category: "Product design",
+    eyebrow: "Trail running coach",
+    summary:
+      "A requirements-led mobile coaching concept that recommends safer, goal-matched trail routes and full-body training plans.",
+    problem:
+      "Trail runners juggle race goals, elevation, terrain, weather, recovery, and local safety data across disconnected tools.",
+    contribution:
+      "Focused the product concept into testable requirements and a route-recommendation flow with actors, constraints, degraded states, and measurable outcomes.",
+    implementation:
+      "The design combines profile data, weather, route metadata, hazard filters, scoring, and local caching in a traceable use case and sequence model.",
+    features: [
+      "Ranked route recommendations",
+      "Weather and hazard safety filters",
+      "Cached offline route fallback",
+      "Wearable and fitness-data integration",
+    ],
+    technologies: ["Requirements engineering", "UML", "UX prototyping", "API design"],
+    challenge:
+      "Turning many uncertain data sources into recommendations that remain understandable, privacy-aware, and useful when an API or GPS signal fails.",
+    outcome:
+      "A prototype-ready product specification that connects user goals to system behavior, alternative flows, business rules, and future test cases.",
+    art: "map",
+    accent: "#ff9b62",
+    featured: true,
+  },
+  {
+    id: "stock-evolver",
+    title: "Stock Evolver",
+    category: "Data product",
+    eyebrow: "Investment analysis",
+    summary:
+      "An interactive dashboard that makes market movement easier to explore through focused data views.",
+    problem:
+      "Investment data is often dense and fragmented, making it difficult to compare movement and find a useful signal quickly.",
+    contribution:
+      "Designed the product structure and built the interface as a set of reusable, responsive components for fast scanning and deeper exploration.",
+    implementation:
+      "Typed React components organize controls, market context, and visualisation states while keeping the experience legible across screen sizes.",
+    features: [
+      "Interactive market visualisations",
+      "Reusable dashboard components",
+      "Responsive comparison views",
+    ],
+    technologies: ["React", "TypeScript", "Data visualisation"],
+    challenge:
+      "Balancing information density with a hierarchy that still feels approachable to a first-time visitor.",
+    outcome:
+      "A portfolio-ready analysis surface that demonstrates component architecture and information design without hiding the underlying data story.",
+    art: "markets",
+    accent: "#39f5c7",
+    featured: false,
+  },
+  {
+    id: "smartlift",
+    title: "SmartLift",
+    category: "Mobile product",
+    eyebrow: "Workout tracking",
+    summary:
+      "A mobile workout experience that combines authenticated access with persistent routine tracking.",
+    problem:
+      "Workout progress becomes harder to sustain when plans, completed sets, and account history live in disconnected places.",
+    contribution:
+      "Shaped the mobile interaction flow and connected authenticated user sessions to durable workout data.",
+    implementation:
+      "Expo-based screens and Firebase services support account access, structured routines, and continuity between sessions.",
+    features: [
+      "Authenticated user flows",
+      "Persistent workout tracking",
+      "Mobile-first interaction patterns",
+    ],
+    technologies: ["Expo", "Firebase", "React Native"],
+    challenge:
+      "Keeping workout state understandable and consistent as users move between sessions and devices.",
+    outcome:
+      "A cohesive mobile foundation for planning, recording, and revisiting training activity.",
+    art: "mobile",
+    accent: "#ffb85c",
+    featured: false,
   },
   {
     id: "simple-shell",
@@ -199,14 +227,14 @@ export const projectRails = [
     eyebrow: "Start here",
     title: "Featured projects",
     description: "The strongest product stories, selected for a quick recruiter scan.",
-    projectIds: ["stock-evolver", "smartlift", "wildfire-tracker"],
+    projectIds: ["uvcraft", "pacman-tester", "awaretrail"],
   },
   {
     id: "systems-interactive",
     eyebrow: "Under the surface",
-    title: "Systems & interactive",
-    description: "Graphics, process control, and technical builds with a little more depth.",
-    projectIds: ["uvcraft", "simple-shell"],
+    title: "Products & systems",
+    description: "Data products, mobile workflows, and systems work with a little more depth.",
+    projectIds: ["stock-evolver", "smartlift", "simple-shell"],
   },
 ] as const;
 
@@ -249,7 +277,7 @@ export const experiences: ExperienceItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Languages",
-    skills: ["TypeScript", "JavaScript", "C", "Python", "SQL"],
+    skills: ["TypeScript", "JavaScript", "Java", "C", "Python", "SQL"],
   },
   {
     title: "Web & mobile",
@@ -257,11 +285,11 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Data & platforms",
-    skills: ["Firebase", "REST APIs", "NASA EONET", "Mapping", "Data visualisation"],
+    skills: ["Firebase", "REST APIs", "Health data", "Mapping", "Data visualisation"],
   },
   {
-    title: "Systems & graphics",
-    skills: ["Linux", "Git", "GitHub", "Three.js", "React Three Fiber"],
+    title: "Systems, QA & graphics",
+    skills: ["Linux", "Git", "JUnit", "Mockito", "Gradle", "Three.js", "React Three Fiber"],
   },
 ];
 
