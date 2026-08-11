@@ -1,0 +1,18 @@
+{
+  "name": "Prabhnoor Singh — Software Developer",
+  "short_name": "Prabhnoor Singh",
+  "description": "The software development portfolio of Prabhnoor Singh.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050b0e",
+  "theme_color": "#39f5c7",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
