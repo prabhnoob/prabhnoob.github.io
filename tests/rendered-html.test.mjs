@@ -158,6 +158,10 @@ test("keeps dialog links, navigation accessibility, and reduced motion explicit"
   assert.match(uvcraft, /githubUrl:\s*["']https:\/\/github\.com\/prabhnoob\/UVcraft["']/i);
   assert.match(uvcraft, /demoUrl:\s*["']https:\/\/prabhnoob\.github\.io\/UVcraft\/["']/i);
 
+  const pacman =
+    portfolioData.match(/id:\s*["']pacman-tester["'][\s\S]*?featured:\s*true,?\s*\n\s*}/i)?.[0] ?? "";
+  assert.match(pacman, /githubUrl:\s*["']https:\/\/github\.com\/prabhnoob\/jpacman["']/i);
+
   assert.match(
     component,
     /<a\b(?=[^>]*href=\{project\.demoUrl})(?=[^>]*target=["']_blank["'])(?=[^>]*rel=["']noopener noreferrer["'])[^>]*>Open live project/i,

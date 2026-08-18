@@ -108,6 +108,7 @@ export const projects: Project[] = [
       "All 37 automated tests pass across seven suites, backed by manual scenarios for movement, pellets, ghosts, walls, and pause or resume behavior.",
     art: "testing",
     accent: "#ffe45c",
+    githubUrl: "https://github.com/prabhnoob/jpacman",
     featured: true,
   },
   {
