@@ -1,4 +1,4 @@
-export type ProjectArt = "clinic" | "buddy" | "map" | "world" | "testing" | "terminal";
+export type ProjectArt = "clinic" | "buddy" | "map" | "world" | "testing" | "security" | "terminal";
 
 export interface Project {
   id: string;
@@ -45,7 +45,7 @@ export const profile = {
   role: "Computer Science Student · Software Developer",
   headline: "I build clear interfaces for complex systems.",
   positioning:
-    "From tested software and patient-data tools to human-centred prototypes and interactive 3D worlds, I turn technical ideas into responsive, useful experiences.",
+    "From machine-learning research and tested software to human-centred prototypes and interactive 3D worlds, I turn technical ideas into useful, evidence-led experiences.",
   location: "Victoria, BC",
   availability: "Open to co-op, internship, and software collaboration opportunities.",
   email: "prabhnoorarcher@gmail.com",
@@ -138,6 +138,35 @@ export const projects: Project[] = [
     art: "map",
     accent: "#ff9b62",
     featured: true,
+  },
+  {
+    id: "phishing-url-generalization",
+    title: "Phishing URL Generalization",
+    category: "Machine Learning & Cybersecurity",
+    eyebrow: "SENG 474 · Leakage-resistant evaluation",
+    summary:
+      "A research project evaluating whether phishing URL detectors still perform when every test domain is genuinely unseen during training.",
+    problem:
+      "Random train-test splits can place related URLs from the same registrable domain in both partitions, making a detector appear more reliable than it would be against new attacker infrastructure.",
+    contribution:
+      "Defined the data-source checks and registrable-domain grouping rules used to keep evaluation splits leakage-free, while contributing to the problem formulation, experiments, and writing.",
+    implementation:
+      "The experimental plan compares random, host-disjoint, registrable-domain-disjoint, and cross-source splits using the 235,795-site PhiUSIIL corpus plus an independent public URL dataset.",
+    features: [
+      "Four realistic evaluation strategies",
+      "Registrable-domain leakage controls",
+      "Cross-source generalization testing",
+      "Reproducible research protocol",
+    ],
+    technologies: ["Machine learning", "Cybersecurity", "Dataset evaluation", "eTLD+1", "LaTeX"],
+    challenge:
+      "Separating genuine generalization from memorized domain-family shortcuts while keeping comparisons fair across datasets collected in different ways.",
+    outcome:
+      "A public research proposal and formal evaluation protocol that establish the project scope, team responsibilities, and next experimental milestone.",
+    art: "security",
+    accent: "#5ff0c2",
+    githubUrl: "https://github.com/prabhnoob/domain-generalizable-phishing-url-detection",
+    featured: false,
   },
   {
     id: "study-buddy-finder",
@@ -235,9 +264,9 @@ export const projectRails = [
   {
     id: "coursework-systems",
     eyebrow: "From coursework to craft",
-    title: "Interaction, requirements & systems",
-    description: "Human-centred design, traceable requirements, and lower-level systems work.",
-    projectIds: ["study-buddy-finder", "awaretrail", "simple-shell"],
+    title: "Research, interaction & systems",
+    description: "Leakage-resistant evaluation, human-centred design, traceable requirements, and lower-level systems work.",
+    projectIds: ["phishing-url-generalization", "study-buddy-finder", "awaretrail", "simple-shell"],
   },
 ] as const;
 
@@ -288,8 +317,8 @@ export const skillGroups: SkillGroup[] = [
     skills: ["React", "Vite", "HTML", "Modern CSS", "HCI", "Heuristic evaluation"],
   },
   {
-    title: "Data & applications",
-    skills: ["pandas", "PyQt6", "JSON", "Firebase", "REST APIs", "Health data"],
+    title: "Data & machine learning",
+    skills: ["Machine learning", "Dataset evaluation", "pandas", "PyQt6", "JSON", "Firebase", "REST APIs"],
   },
   {
     title: "Quality, systems & graphics",

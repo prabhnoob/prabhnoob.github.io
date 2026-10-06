@@ -99,12 +99,13 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
       /<button\b(?=[^>]*\bclass=["'][^"']*\bproject-card__button\b[^"']*["'])(?=[^>]*\baria-haspopup=["']dialog["'])[^>]*>/gi,
     ) ?? [];
   assert.ok(
-    projectButtons.length >= 6,
-    `expected at least six project-card dialog buttons, found ${projectButtons.length}`,
+    projectButtons.length >= 7,
+    `expected at least seven project-card dialog buttons, found ${projectButtons.length}`,
   );
   for (const projectTitle of [
     "UVcraft",
     "Pacman Tester",
+    "Phishing URL Generalization",
     "AwareTrail",
     "Study Buddy Finder",
     "Patient Data Management",
@@ -117,6 +118,8 @@ test("server-renders the completed Prabhnoor Singh portfolio", async () => {
   assert.match(text, /Software Testing/i);
   assert.match(text, /Human-Computer Interaction/i);
   assert.match(text, /Requirements Engineering/i);
+  assert.match(text, /Machine Learning/i);
+  assert.match(text, /leakage-resistant evaluation/i);
   assert.match(text, /Python/i);
   assert.match(text, /pandas/i);
   assert.match(html, /<noscript>/i);
@@ -161,6 +164,11 @@ test("keeps dialog links, navigation accessibility, and reduced motion explicit"
   const pacman =
     portfolioData.match(/id:\s*["']pacman-tester["'][\s\S]*?featured:\s*true,?\s*\n\s*}/i)?.[0] ?? "";
   assert.match(pacman, /githubUrl:\s*["']https:\/\/github\.com\/prabhnoob\/jpacman["']/i);
+
+  const phishing =
+    portfolioData.match(/id:\s*["']phishing-url-generalization["'][\s\S]*?featured:\s*false,?\s*\n\s*}/i)?.[0] ?? "";
+  assert.match(phishing, /githubUrl:\s*["']https:\/\/github\.com\/prabhnoob\/domain-generalizable-phishing-url-detection["']/i);
+  assert.match(phishing, /art:\s*["']security["']/i);
 
   assert.match(
     component,

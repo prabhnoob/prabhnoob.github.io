@@ -1349,6 +1349,90 @@ button {
 .testing-panel i:nth-of-type(2) { opacity: 0.78; }
 .testing-panel i:nth-of-type(3) { opacity: 0.58; }
 
+.project-art--security {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(95, 240, 194, 0.2), transparent 34%),
+    linear-gradient(145deg, #082125, #071116 74%);
+}
+
+.security-art {
+  position: absolute;
+  inset: 0;
+}
+
+.security-flow {
+  position: absolute;
+  inset: 19% 7% 30%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.security-flow > i {
+  color: var(--project-accent);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-style: normal;
+  text-shadow: 0 0 18px rgba(95, 240, 194, 0.5);
+}
+
+.security-split {
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 0.45rem;
+  background: rgba(3, 13, 17, 0.72);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.security-split small,
+.security-readout small {
+  color: var(--project-accent);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.38rem;
+  letter-spacing: 0.1em;
+}
+
+.security-split span {
+  overflow: hidden;
+  padding: 0.34rem 0.4rem;
+  border-radius: 0.28rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.76);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.4rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.security-split--test {
+  border-color: rgba(95, 240, 194, 0.3);
+  box-shadow: inset 0 0 20px rgba(95, 240, 194, 0.04);
+}
+
+.security-readout {
+  position: absolute;
+  right: 7%;
+  bottom: 8%;
+  left: 7%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.security-readout b {
+  color: #fff;
+  font-size: clamp(0.78rem, 1.45vw, 1.15rem);
+}
+
+.security-readout span {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.4rem;
+  text-align: right;
+}
+
 .project-art--terminal {
   padding: 2rem 1rem 1rem;
   background: radial-gradient(circle at 70% 60%, rgba(199, 255, 113, 0.09), transparent 38%), #080d0c;

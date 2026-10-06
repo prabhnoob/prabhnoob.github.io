@@ -112,6 +112,29 @@ function ProjectArtwork({ project, hero = false }: { project: Project; hero?: bo
         </div>
       )}
 
+      {project.art === "security" && (
+        <div className="security-art">
+          <div className="security-flow">
+            <div className="security-split security-split--train">
+              <small>TRAIN DOMAINS</small>
+              <span>paypal.com</span>
+              <span>example.net</span>
+            </div>
+            <i>≠</i>
+            <div className="security-split security-split--test">
+              <small>UNSEEN TEST</small>
+              <span>login-fraud.top</span>
+              <span>new-source.org</span>
+            </div>
+          </div>
+          <div className="security-readout">
+            <small>LEAKAGE CHECK</small>
+            <b>eTLD+1 disjoint</b>
+            <span>random · domain · cross-source</span>
+          </div>
+        </div>
+      )}
+
       {project.art === "terminal" && (
         <div className="terminal-art">
           <div className="terminal-top"><span>csc360 — shell</span><i>● ● ●</i></div>
