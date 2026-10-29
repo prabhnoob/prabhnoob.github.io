@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import "./redesign.css";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   colorScheme: "dark",
-  themeColor: "#050b0e",
+  themeColor: "#10110f",
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s · Prabhnoor Singh",
     },
     description:
-      "Software developer portfolio featuring interactive 3D work, software testing, patient-data applications, HCI, requirements engineering, and systems programming.",
+      "Prabhnoor Singh’s software developer portfolio. UVic Computer Science student seeking co-op opportunities, with work in interactive 3D, software testing, applications, and machine-learning research.",
     applicationName: "Prabhnoor Singh Portfolio",
     authors: [{ name: "Prabhnoor Singh", url: "https://github.com/prabhnoob" }],
     creator: "Prabhnoor Singh",

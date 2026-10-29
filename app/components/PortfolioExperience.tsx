@@ -225,13 +225,13 @@ function Hero({ onOpenProject }: { onOpenProject: (project: Project, trigger: HT
 
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-glow hero-glow--one" aria-hidden="true" />
-      <div className="hero-glow hero-glow--two" aria-hidden="true" />
+      <div className="hero-kicker"><span>UNIVERSITY OF VICTORIA · COMPUTER SCIENCE</span><span>VICTORIA, BC / CANADA</span></div>
       <div className="hero-grid">
         <div className="hero-copy">
-          <p className="availability"><span aria-hidden="true" /> {profile.availability}</p>
+          <p className="availability"><span aria-hidden="true" /> Open to software co-op roles</p>
           <p className="hero-role">{profile.role}</p>
-          <h1 id="hero-title">{profile.headline}</h1>
+          <h1 id="hero-title"><span>Prabhnoor</span><span className="hero-surname">Singh<span className="hero-period">.</span></span></h1>
+          <p className="hero-statement">Curious mind.<br /><em>Careful engineering.</em></p>
           <p className="hero-positioning">{profile.positioning}</p>
           <div className="hero-actions">
             <a className="button button--primary" href="#projects" data-analytics-event="hero-projects">
@@ -248,18 +248,19 @@ function Hero({ onOpenProject }: { onOpenProject: (project: Project, trigger: HT
             </a>
           </div>
           <dl className="hero-facts" aria-label="Portfolio highlights">
-            <div><dt>{String(projects.length).padStart(2, "0")}</dt><dd>selected builds</dd></div>
-            <div><dt>03</dt><dd>product surfaces</dd></div>
-            <div><dt>BC</dt><dd>{profile.location}</dd></div>
+            <div><dt>{String(projects.length).padStart(2, "0")}</dt><dd>projects & research</dd></div>
+            <div><dt>UVic</dt><dd>Computer Science</dd></div>
+            <div><dt>Let’s talk</dt><dd><a href={`mailto:${profile.email}`}>Available for co-op</a></dd></div>
           </dl>
         </div>
 
         <div className="hero-feature" aria-label={`Featured project: ${featuredProject.title}`}>
           <div className="hero-feature__frame">
+            <div className="feature-toolbar"><span>IN THE BROWSER</span><span>01 / UVCRAFT</span></div>
             <ProjectArtwork project={featuredProject} hero />
             <div className="hero-feature__meta">
               <div>
-                <span>NOW FEATURING</span>
+                <span>EXPLORE A WORLD I BUILT</span>
                 <h2>{featuredProject.title}</h2>
                 <p>{featuredProject.summary}</p>
               </div>
@@ -273,17 +274,18 @@ function Hero({ onOpenProject }: { onOpenProject: (project: Project, trigger: HT
               </button>
             </div>
           </div>
-          <div className="hero-feature__note"><span>01</span> Featured case study</div>
+          <div className="hero-feature__note"><span>REACT · TYPESCRIPT · THREE.JS</span><a href={featuredProject.demoUrl} target="_blank" rel="noopener noreferrer">Launch UVcraft ↗</a></div>
+          <div className="hero-proof"><span className="proof-symbol" aria-hidden="true">✳</span><div><strong>Build. Test. Understand.</strong><p>Interactive products, automated tests, and research that asks harder questions.</p></div></div>
         </div>
       </div>
-      <a className="scroll-cue" href="#projects"><span>Scroll to explore</span><i aria-hidden="true" /></a>
+      <div className="hero-bottom"><span>SOFTWARE / INTERACTION / RESEARCH</span><a href="#projects">Selected work below ↓</a></div>
     </section>
   );
 }
 
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: (project: Project, trigger: HTMLButtonElement) => void }) {
   return (
-    <article className="project-card" role="listitem">
+    <article className="project-card" role="listitem" style={{ "--project-accent": project.accent } as CSSProperties}>
       <button
         type="button"
         className="project-card__button"
@@ -297,6 +299,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (project: 
           <span className="project-card__eyebrow">{project.eyebrow}</span>
           <strong>{project.title}</strong>
           <span className="project-card__summary">{project.summary}</span>
+          <span className="project-evidence"><span>{project.id === "phishing-url-generalization" ? "PROPOSAL / IN PROGRESS" : "PROJECT HIGHLIGHT"}</span><b>{project.features[0]}</b></span>
           <span className="tag-list" aria-label="Technologies">
             {project.technologies.slice(0, 3).map((technology) => <span key={technology}>{technology}</span>)}
           </span>
@@ -314,17 +317,9 @@ function ProjectRail({
   rail: (typeof projectRails)[number];
   onOpen: (project: Project, trigger: HTMLButtonElement) => void;
 }) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const railProjects = rail.projectIds
     .map((id) => projects.find((project) => project.id === id))
     .filter((project): project is Project => Boolean(project));
-
-  const move = (direction: -1 | 1) => {
-    trackRef.current?.scrollBy({
-      left: direction * Math.max(trackRef.current.clientWidth * 0.82, 320),
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section className="project-rail" aria-labelledby={`${rail.id}-title`}>
@@ -334,13 +329,9 @@ function ProjectRail({
           <h3 id={`${rail.id}-title`}>{rail.title}</h3>
           <p>{rail.description}</p>
         </div>
-        <div className="rail-controls" aria-label={`${rail.title} navigation`}>
-          <button type="button" onClick={() => move(-1)} aria-label={`Scroll ${rail.title} left`} aria-controls={`${rail.id}-track`}>←</button>
-          <button type="button" onClick={() => move(1)} aria-label={`Scroll ${rail.title} right`} aria-controls={`${rail.id}-track`}>→</button>
-        </div>
+        <span className="rail-count">{String(railProjects.length).padStart(2, "0")} PROJECTS</span>
       </div>
       <div
-        ref={trackRef}
         id={`${rail.id}-track`}
         className="rail-track"
         role="list"
@@ -467,7 +458,7 @@ function Skills() {
     <section id="skills" className="content-section skills-section" aria-labelledby="skills-title">
       <div className="section-intro section-intro--row">
         <div><p className="section-eyebrow">Capabilities / Toolkit</p><h2 id="skills-title">Built across the stack.</h2></div>
-        <p>No percentage bars—just the technologies used across the work shown here.</p>
+        <p>From a first prototype to a tested system: the tools I use to bring ideas into working software.</p>
       </div>
       <div className="skills-grid">
         {skillGroups.map((group, index) => (
@@ -507,7 +498,7 @@ function Contact() {
       <div className="contact-orbit" aria-hidden="true"><span /><span /><i /></div>
       <div className="contact-copy">
         <p className="section-eyebrow">Contact / Next step</p>
-        <h2 id="contact-title">Have a problem worth building for?</h2>
+        <h2 id="contact-title">Your next co-op.<br /><em>Let’s build it.</em></h2>
         <p>{profile.availability} If a role or project could be a fit, I’d be glad to hear the context.</p>
         <a className="button button--light" href={`mailto:${profile.email}`} data-analytics-event="contact-email">Start a conversation <span aria-hidden="true">↗</span></a>
       </div>
@@ -527,7 +518,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <a className="brand" href="#top" aria-label="Back to top"><span className="brand-mark" aria-hidden="true">PS</span><span className="brand-copy"><b>Prabhnoor Singh</b><small>Software developer</small></span></a>
-      <p>Designed for clarity. Built with React, TypeScript, and a little cinematic energy.</p>
+      <p>Curiosity in the details. Care in the code.</p>
       <div><span>© {new Date().getFullYear()} Prabhnoor Singh</span><a href="#top">Back to top ↑</a></div>
     </footer>
   );
@@ -558,8 +549,8 @@ export function PortfolioExperience() {
         <Hero onOpenProject={openProject} />
         <section id="projects" className="projects-section" aria-labelledby="projects-title">
           <div className="projects-overview">
-            <div><p className="section-eyebrow">Selected work / {String(projects.length).padStart(2, "0")} builds</p><h2 id="projects-title">A portfolio you can browse,<br />then dig into.</h2></div>
-            <p>Each card opens a focused case study with the problem, contribution, implementation, and outcome—no hover required.</p>
+            <div><p className="section-eyebrow">01 / Selected work</p><h2 id="projects-title">Ideas into<br /><em>working things.</em></h2></div>
+            <p>Seven projects across software, interaction design, and research. Explore what I built, the decisions behind it, and what I learned.</p>
           </div>
           {projectRails.map((rail) => <ProjectRail key={rail.id} rail={rail} onOpen={openProject} />)}
         </section>

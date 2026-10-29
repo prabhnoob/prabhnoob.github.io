@@ -45,7 +45,7 @@ export const profile = {
   role: "Computer Science Student · Software Developer",
   headline: "I build clear interfaces for complex systems.",
   positioning:
-    "From machine-learning research and tested software to human-centred prototypes and interactive 3D worlds, I turn technical ideas into useful, evidence-led experiences.",
+    "I’m a Computer Science student at UVic, building thoughtful interfaces, tested software, and interactive worlds. Looking for a team where I can contribute, learn, and build what’s next.",
   location: "Victoria, BC",
   availability: "Open to co-op, internship, and software collaboration opportunities.",
   email: "prabhnoorarcher@gmail.com",
